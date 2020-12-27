@@ -29,5 +29,31 @@ can also try certutil or powershell wget (if newish PSVersion)
 
 Windows Misc
 -----------------------------
-# Search through registry for "pass" in value name
+// Search through registry for "pass" in value name
 reg query HKLM /f pass /t REG_SZ /s
+
+
+John Wordlist Mutation
+-----------------------------
+// Will use Wordlist mode rules from /etc/john/john.conf
+john --rules --wordlist=wordlist.txt hashes.txt
+john --rules --stdout --wordlist=wordlist.txt > mutated_wordlist.txt
+
+
+John Wordlist Rules
+-----------------------------
+[List.Rules:Wordlist]
+$[0-9]
+$[0-9]$[0-9]
+cAz"[0-9]"
+cAz"[0-9][0-9]"
+cAz"[£!$]"
+cAz"[0-9][£!$]"
+
+// or add to a custom rules list like [List.Rules:MyRule]
+john --rules=MyRule --wordlist=wordlist.txt hashes.txt
+
+// a good one to use is --rules=Jumbo
+
+
+
