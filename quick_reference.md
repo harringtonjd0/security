@@ -68,6 +68,9 @@ can also try certutil or powershell wget (if newish PSVersion)
  a good one to use is --rules=Jumbo
 
 
+## Nix Misc
+### Install gobuster
+sudo apt install golang -y && go get github.com/OJ/gobuster && sudo cp ~/go/bin/gobuster /usr/local/bin  
 
 ## Windows Misc
 
