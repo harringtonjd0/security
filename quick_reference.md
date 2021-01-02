@@ -1,4 +1,4 @@
-# Command reference for CTFs and pen testing practice
+# Command reference  
 
 
 
