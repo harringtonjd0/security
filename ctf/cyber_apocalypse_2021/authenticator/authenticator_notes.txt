@@ -1,0 +1,27 @@
+authenticator
+
+rbp - 0x1e
+
+set $rax=0x74
+set $rax=0x68
+
+encoded answer string?
+0x555555400b99
+p 0x555555400b99
+
+value to xor with: 
+0x9 0x17409
+
+xored: }a:... that string im pretty sure
+answer: th3
+
+b* checkpin+53
+x $rbp-0x1e
+x $rbp-0x1d
+set $al=0x74
+
+enc = }a:Vh|}a:g}8j=}89gV<p<}:dV8<Vg9}V<9V<:j|{:
+''.join([chr(ord(enc[x]) ^ 9) for x in range(len(enc))])
+
+answer:
+th3_auth3nt1c4t10n_5y5t3m_15_n0t_50_53cur3

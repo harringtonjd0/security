@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE items [
+<!ELEMENT items (item*)>
+<!ATTLIST items burpVersion CDATA "">
+<!ATTLIST items exportTime CDATA "">
+<!ELEMENT item (time, url, host, port, protocol, method, path, extension, request, status, responselength, mimetype, response, comment)>
+<!ELEMENT time (#PCDATA)>
+<!ELEMENT url (#PCDATA)>
+<!ELEMENT host (#PCDATA)>
+<!ATTLIST host ip CDATA "">
+<!ELEMENT port (#PCDATA)>
+<!ELEMENT protocol (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT request (#PCDATA)>
+<!ATTLIST request base64 (true|false) "false">
+<!ELEMENT status (#PCDATA)>
+<!ELEMENT responselength (#PCDATA)>
+<!ELEMENT mimetype (#PCDATA)>
+<!ELEMENT response (#PCDATA)>
+<!ATTLIST response base64 (true|false) "false">
+<!ELEMENT comment (#PCDATA)>
+]>
+<items burpVersion="2020.12.1" exportTime="Wed Apr 21 18:35:43 HST 2021">
+  <item>
+    <time>Wed Apr 21 18:35:09 HST 2021</time>
+    <url><![CDATA[http://165.227.237.7:32515/api/list]]></url>
+    <host ip="165.227.237.7">165.227.237.7</host>
+    <port>32515</port>
+    <protocol>http</protocol>
+    <method><![CDATA[POST]]></method>
+    <path><![CDATA[/api/list]]></path>
+    <extension>null</extension>
+    <request base64="true"><![CDATA[UE9TVCAvYXBpL2xpc3QgSFRUUC8xLjENCkhvc3Q6IDE2NS4yMjcuMjM3Ljc6MzI1MTUNClVzZXItQWdlbnQ6IE1vemlsbGEvNS4wIChYMTE7IExpbnV4IHg4Nl82NDsgcnY6NzguMCkgR2Vja28vMjAxMDAxMDEgRmlyZWZveC83OC4wDQpBY2NlcHQ6ICovKg0KQWNjZXB0LUxhbmd1YWdlOiBlbi1VUyxlbjtxPTAuNQ0KQWNjZXB0LUVuY29kaW5nOiBnemlwLCBkZWZsYXRlDQpSZWZlcmVyOiBodHRwOi8vMTY1LjIyNy4yMzcuNzozMjUxNS8NCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbg0KT3JpZ2luOiBodHRwOi8vMTY1LjIyNy4yMzcuNzozMjUxNQ0KQ29udGVudC1MZW5ndGg6IDE3DQpDb25uZWN0aW9uOiBjbG9zZQ0KDQp7Im9yZGVyIjoiY291bnQifQ==]]></request>
+    <status>200</status>
+    <responselength>856</responselength>
+    <mimetype></mimetype>
+    <response base64="true"><![CDATA[SFRUUC8xLjEgMjAwIE9LDQpYLVBvd2VyZWQtQnk6IEV4cHJlc3MNCkNvbnRlbnQtVHlwZTogYXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA0KQ29udGVudC1MZW5ndGg6IDY0Nw0KRVRhZzogVy8iMjg3LTFxUzJLb2pNZDRxTG9WaCt0QmZGU0pxeUM0RSINCkRhdGU6IFRodSwgMjIgQXByIDIwMjEgMDQ6MzU6MTAgR01UDQpDb25uZWN0aW9uOiBjbG9zZQ0KDQpbeyJpZCI6MywiZW1vamkiOiLwn5G+IiwibmFtZSI6ImFsaWVuIG1vbnN0ZXIiLCJjb3VudCI6MX0seyJpZCI6NiwiZW1vamkiOiLwn6qgIiwibmFtZSI6IvCfkYcgPSBodW1hbiIsImNvdW50IjoyfSx7ImlkIjoyLCJlbW9qaSI6IvCfm7giLCJuYW1lIjoiZmx5aW5nIHNhdWNlciIsImNvdW50IjozfSx7ImlkIjoxLCJlbW9qaSI6IvCfkb0iLCJuYW1lIjoiYWxpZW4iLCJjb3VudCI6MTN9LHsiaWQiOjUsImVtb2ppIjoi8J+avSIsIm5hbWUiOiLwn5GHID0gaHVtYW4iLCJjb3VudCI6MTl9LHsiaWQiOjksImVtb2ppIjoi8J+NjCIsIm5hbWUiOiJiYW5hbmEiLCJjb3VudCI6MjF9LHsiaWQiOjExLCJlbW9qaSI6IvCfkLciLCJuYW1lIjoicGlnIiwiY291bnQiOjM3fSx7ImlkIjo4LCJlbW9qaSI6IvCfjZEiLCJuYW1lIjoicGVhY2giLCJjb3VudCI6NDB9LHsiaWQiOjcsImVtb2ppIjoi8J+NhiIsIm5hbWUiOiJlZ2dwbGFudCIsImNvdW50Ijo2OX0seyJpZCI6MTAsImVtb2ppIjoi8J+QtiIsIm5hbWUiOiJkb2ciLCJjb3VudCI6ODB9LHsiaWQiOjQsImVtb2ppIjoi8J+SqSIsIm5hbWUiOiLwn5GHID0gaHVtYW4iLCJjb3VudCI6MTE4fSx7ImlkIjoxMiwiZW1vamkiOiLwn5GoIiwibmFtZSI6ImhvbW8gaWRpb3R1cyIsImNvdW50IjoxMjV9XQ==]]></response>
+    <comment></comment>
+  </item>
+</items>

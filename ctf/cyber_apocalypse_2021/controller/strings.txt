@@ -1,0 +1,130 @@
+/lib64/ld-linux-x86-64.so.2
+*LN<
+libc.so.6
+exit
+__isoc99_scanf
+puts
+putchar
+printf
+strlen
+stdout
+usleep
+setvbuf
+strcmp
+__libc_start_main
+GLIBC_2.7
+GLIBC_2.2.5
+__gmon_start__
+H=P `
+/w#H
+/w#H
+AWAVI
+AUATL
+[]A\A]A^A_
+[1;%d;%s%c
+[1;%s%c
+green
+yellow
+blue
+magenta
+cyan
+rainbow
+Unknown color!
+underline
+blink
+bold
+background
+hidden
+deleted
+[1;%d;%s%s
+[1;%s%s
+Invalid operation, exiting..
+Choose operation:
+Insert the amount of 2 different types of recources: 
+%d %d
+We cannot use these many resources at once!
+%d + %d = %d
+%d - %d = %d
+%d * %d = %d
+%d / %d = %d
+Something odd happened!
+Do you want to report the problem?
+Problem reported!
+Problem ingored
+ Control Room 
+;*3$"
+GCC: (Ubuntu 7.5.0-3ubuntu1~18.04) 7.5.0
+crtstuff.c
+deregister_tm_clones
+__do_global_dtors_aux
+completed.7698
+__do_global_dtors_aux_fini_array_entry
+frame_dummy
+__frame_dummy_init_array_entry
+controller.c
+__FRAME_END__
+__init_array_end
+_DYNAMIC
+__init_array_start
+__GNU_EH_FRAME_HDR
+_GLOBAL_OFFSET_TABLE_
+__libc_csu_fini
+putchar@@GLIBC_2.2.5
+stdout@@GLIBC_2.2.5
+puts@@GLIBC_2.2.5
+_edata
+menu
+strlen@@GLIBC_2.2.5
+printf@@GLIBC_2.2.5
+calc
+__libc_start_main@@GLIBC_2.2.5
+rainbow
+__data_start
+strcmp@@GLIBC_2.2.5
+printstr
+__gmon_start__
+welcome
+__dso_handle
+_IO_stdin_used
+divi
+mult
+color
+__libc_csu_init
+reset
+_dl_relocate_static_pie
+calculator
+__bss_start
+main
+setvbuf@@GLIBC_2.2.5
+color_arr
+check
+__isoc99_scanf@@GLIBC_2.7
+exit@@GLIBC_2.2.5
+__TMC_END__
+usleep@@GLIBC_2.2.5
+.symtab
+.strtab
+.shstrtab
+.interp
+.note.ABI-tag
+.note.gnu.build-id
+.gnu.hash
+.dynsym
+.dynstr
+.gnu.version
+.gnu.version_r
+.rela.dyn
+.rela.plt
+.init
+.text
+.fini
+.rodata
+.eh_frame_hdr
+.eh_frame
+.init_array
+.fini_array
+.dynamic
+.got
+.data
+.bss
+.comment

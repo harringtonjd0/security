@@ -1,0 +1,10 @@
+- Given pcap. Do protocol analysis to identify a ton of ICMP traffic
+- identify strange icmp payload data
+- write python script to extract data and write to file. Took a fair amount of trial and error
+- unzip 'fini' firefox directory to get content
+- copy logins.json and key4.db to windows firefox dir
+- open up firefox, check saved logins. flag is the password:
+
+CHTB{long_time_no_s33_icmp}
+
+this was not easy

@@ -1,0 +1,20 @@
+Backdoor
+
+- Python binary
+
+- extract the .pyc with objcopy
+
+	objcopy --dump-section pytdata=pydata.dump bd
+
+
+- use pyinstxtractor
+
+	git clone https://github.com/extremecoders-re/pyinstxtractor.git
+	python3 pyinstxtractor.py pydata.dump
+
+
+- use python-decompile3 to get source code
+
+- connect to backdoor, send md5 of 'save the world' phrase, then send size, then send commands with "command:"
+
+e2162a8692df4e158e6fd33d1467dfe09command:cat flag.txt

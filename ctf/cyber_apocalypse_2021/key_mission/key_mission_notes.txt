@@ -1,0 +1,12 @@
+Key Mission
+
+2c4041
+
+tcpdump -s0 -r key_mission.pcap -n 1
+
+
+2c0404102c16 ... some others
+
+starting at 63
+
+2a 00 2a 00 0a 00 2c 00 16 

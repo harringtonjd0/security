@@ -1,0 +1,16 @@
+- SQL injection info disclosure by info leakage
+
+	- injection point allowed you control ordering
+	- you can do a true/false comparison to leak info about the db
+	- 'case when ((SELECT substr(flag, 1, {}) FROM " + flag + " limi 1)='{}') then id else name end'
+	- check if char in db name/flag is equal to x character, if true order by id else order by name
+
+
+- Use sagemath for crypto problems
+
+- Review eliptic curves, details of RSA. Do cryptohack
+
+- elgamal signature scheme
+
+- quiqiup and index of coincidence for solving cryptograms 
+
