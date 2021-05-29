@@ -73,9 +73,10 @@ Commands for easy first-time setup of a Kali/Parrot VM after setting up a new im
  ### Misc setup commands
  ```
  sudo updatedb
- sudo systemctl enable ssh
- sudo systemctl enable openvpn
- sudo wget https://raw.githubusercontent.com/harringtonjd0/security/main/.vimrc -O ~/.vimrc
+ sudo systemctl enable ssh openvpn apache2
+ sudo curl https://raw.githubusercontent.com/harringtonjd0/security/main/.vimrc -o ~/.vimrc
+ sudo curl https://raw.githubusercontent.com/carlospolop/privilege-escalation-awesome-scripts-suite/master/linPEAS/linpeas.sh -o /var/www/html/linpeas.sh
+ sudo wget https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/raw/master/winPEAS/winPEASexe/binaries/Obfuscated%20Releases/winPEASany.exe -O /var/www/html/winpeasany.exe
  
  # Disable system beep because it's annoying
  sudo modprobe -r pcspkr
