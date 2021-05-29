@@ -19,7 +19,7 @@ Commands for easy first-time setup of a Kali/Parrot VM after setting up a new im
  ### Install/update useful packages and tools
  
  ```
- sudo apt update -y && sudo apt install -y gobuster crowbar python3-pip python3-venv seclists curl enum4linux ffuf gobuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf`
+ sudo apt update -y && sudo apt install -y gobuster crowbar metasploit-framework python3-pip python3-venv seclists curl enum4linux ffuf gobuster nbtscan nikto nmap onesixtyone oscanner smbclient smbmap smtp-user-enum snmp sslscan sipvicious tnscmd10g whatweb wkhtmltopdf`
  sudo python3 -m pip install git+https://github.com/Tib3rius/AutoRecon.git
  ```
  
@@ -75,7 +75,11 @@ Commands for easy first-time setup of a Kali/Parrot VM after setting up a new im
  sudo updatedb
  sudo systemctl enable ssh
  sudo systemctl enable openvpn
- sudo wget https://raw.githubusercontent.com/harringtonjd0/security/main/.vimrc -O /etc/vim/vimrc
+ sudo wget https://raw.githubusercontent.com/harringtonjd0/security/main/.vimrc -O ~/.vimrc
+ 
+ # Disable system beep because it's annoying
+ sudo modprobe -r pcspkr
+ sudo bash -c 'echo "blacklist pcspkr" >> /etc/modprobe.d/blacklist.conf'
  ```
 </details>
 
