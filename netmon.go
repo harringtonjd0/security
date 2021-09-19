@@ -65,16 +65,51 @@ func (l socket_list) Swap(i, j int) {
 }
 
 func (l socket_list) Less(i, j int) bool {
+	// Sort by process id
+	i_process := fmt.Sprintf("%s", l[i].Process)
+	j_process := fmt.Sprintf("%s", l[j].Process)
+
+	// If no process, conn is likely TIME_WAIT. Sort to bottom
+	if i_process == "<nil>" {
+		if j_process == "<nil>" {
+			return true
+		} else {
+			return false
+		}
+	} else if j_process == "<nil>" {
+		return true
+	}
+
+	// Sort by pid
+	i_pid_str := strings.Split(i_process, "/")[0]
+	j_pid_str := strings.Split(j_process, "/")[0]
+
+	i_pid_num, err := strconv.Atoi(i_pid_str)
+	err_check("Failed parsing IP string", err)
+
+	j_pid_num, err := strconv.Atoi(j_pid_str)
+	err_check("Failed parsing IP string", err)
+
+	return i_pid_num < j_pid_num
+}
+
+func (l socket_list) sort_by_IP_Less(i, j int) bool {
 	// Sort by first quad of IP address
-	// Could also sort by location, org, process, etc
+	// To use this instead of sortind by PID and state, rename to Less, and rename the other Less
+	// 	to something else
+
 	i_addr_string := fmt.Sprintf("%s", l[i].RemoteAddr)
 	j_addr_string := fmt.Sprintf("%s", l[j].RemoteAddr)
+
 	i_quad1_str := strings.Split(i_addr_string, ".")[0]
 	j_quad1_str := strings.Split(j_addr_string, ".")[0]
+
 	i_quad1_num, err := strconv.Atoi(i_quad1_str)
 	err_check("Failed parsing IP string", err)
+
 	j_quad1_num, err := strconv.Atoi(j_quad1_str)
 	err_check("Failed parsing IP string", err)
+
 	return i_quad1_num < j_quad1_num
 }
 
@@ -157,10 +192,6 @@ func list_TCP_connections() []netstat.SockTabEntry {
 		sock_array = append(sock_array, entry)
 	}
 
-	// Cast as socket_list to sort
-	f := socket_list(sock_array)
-	sort.Sort(f)
-
 	return sock_array
 }
 
@@ -169,6 +200,10 @@ func display_TCP_conns(key string, cached_addrs *map[string]IP_Response, queries
 	// and display to terminal
 
 	socket_array := list_TCP_connections()
+
+	// Cast as socket_list to sort
+	f := socket_list(socket_array)
+	sort.Sort(f)
 
 	fmt.Println("  Remote Addr\t\t    Location\t\t  Organization\t\t  Process")
 	fmt.Println("---------------\t\t-----------------\t------------------\t-------------")
@@ -200,7 +235,6 @@ func display_TCP_conns(key string, cached_addrs *map[string]IP_Response, queries
 		address := align_column(remote_IP_port)
 		location := align_column(city + country)
 		org := align_column(json_data.Organization)
-		//process := align_column(process_str)
 
 		// Print everything to terminal
 		fmt.Printf("%s\t%s\t%s\t%s\n", address, location, org, process_str)
