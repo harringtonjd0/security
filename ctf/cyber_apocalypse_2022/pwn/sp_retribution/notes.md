@@ -1,0 +1,6 @@
+- Can select 'Change target's location' option and enter empty string
+- The printf will leak a pointer from the stack, which gives the base addr of the executable
+- From there it's a standard ret2libc
+	- use pop rdi;ret and puts() PLT to print the addr of printf
+	- libc is provided, so just calculate base addr of libc from there 
+	- call system('/bin/sh')
