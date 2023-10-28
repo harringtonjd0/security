@@ -6,4 +6,7 @@ The server had a feature where it would download and render a template page from
 
 To solve, you just had to modify the normal server's template file to access the underlying methods to read the flag file.  Then spin up a web server and have the server pull your template and render it.
 
+Modified the provided index.tpl to add the following:
+  ```<li>{{ .OutFileContents "../flag.txt" }}</li>```
+
 Link about Go template injection: https://www.onsecurity.io/blog/go-ssti-method-research/
